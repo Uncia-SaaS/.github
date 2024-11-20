@@ -40,7 +40,7 @@ The Organization Owner can define various rules to guide application document cr
 
 Parameters necessary for drawing the architecture (using drag-and-drop with React Flow nodes and edges):
 
-- **Network Zone Parameters** (e.g., subnet)
+- **Network Zone**
 - **Simple Internal Module**: Logical module describing a specific function of the application.
 - **Complex Internal Module**: Logical module with multiple bricks, representing sub-functions.
 - **Simple and Complex External Module**: Similar to internal modules but external to the application. They can be:
@@ -285,7 +285,7 @@ When an application document version is opened, the first view is the diagram pa
   - **Subscription Name**
 - **Check Frequency**: Users specify how often Uncia checks Azure (e.g., per minute, hour).
 
-### Cloud Conformity Report
+### Infrastructure Conformity Report (Integrated with Azure and able to connect to any plateform on premise or Cloud)
 
 - **Access**: Application document Owners/Editors can consult the report after the specified interval.
 - **Sections**:
@@ -308,6 +308,6 @@ When an application document version is opened, the first view is the diagram pa
 
 ---
 
-**Definition of a Template**
+## Definition of a Template
 
 Templates in Uncia are akin to application documents and follow similar principles, including versioning up to the approved status (the last three review steps are excluded). To be utilized in an application document, a template must be manually approved by a Reviewer or the Organization Owner. There are no content restrictions on templates.
