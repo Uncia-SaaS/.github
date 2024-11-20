@@ -1,6 +1,6 @@
 ## Uncia Application Overview
 
-Uncia is an application designed for professionals in the IT departments of companies. Its primary goal is to assist in the creation of technical documentation—referred to as "Projects" within the platform. By enabling users to establish relationships between technical documents, Uncia highlights the connections between different IT services or business applications documented within it. The ultimate objective is to generate a comprehensive cartography of the Information System, known as the **Information System Map**.
+Uncia is an application designed for professionals in the IT departments of companies. Its primary goal is to assist in the creation of technical documentation—referred to as "Application documents" within the platform. By enabling users to establish relationships between technical documents, Uncia highlights the connections between different IT services or business applications documented within it. The ultimate objective is to generate a comprehensive cartography of the Information System, known as the **Information System Map**.
 
 ---
 
@@ -17,11 +17,11 @@ Before producing documents, Uncia must be configured by the **Organization Owner
 ### 1. Defining User Roles
 
 - **Organization Owners**: Admins with full permissions over the organization's Uncia environment.
-- **Users**: By default, have read-only access to all projects.
-  - **Project Owner**: A user who creates a project; has full permissions on that project, including deletion rights.
-  - **Editor**: A user granted edit privileges on a project by the Project Owner.
-  - **Reviewer**: A user assigned to review specific project versions; projects can contain multiple versions.
-- **Deployment Team**: Users who do not have direct access to the application but receive email notifications to build the content of a project version. They have token access to the API.
+- **Users**: By default, have read-only access to all application documents.
+  - **Application document Owner**: A user who creates a application document; has full permissions on that application document, including deletion rights.
+  - **Editor**: A user granted edit privileges on a application document by the Application document Owner.
+  - **Reviewer**: A user assigned to review specific application document versions; application documents can contain multiple versions.
+- **Deployment Team**: Users who do not have direct access to the application but receive email notifications to build the content of a application document version. They have token access to the API.
 
 ### 2. Connecting to Azure Tenant
 
@@ -29,7 +29,7 @@ Uncia can connect to an Azure tenant using service principal credentials. This i
 
 ### 3. Setting Rules
 
-The Organization Owner can define various rules to guide project creation and ensure compliance:
+The Organization Owner can define various rules to guide application document creation and ensure compliance:
 
 #### a. Network Zones and Flows
 
@@ -44,9 +44,9 @@ Parameters necessary for drawing the architecture (using drag-and-drop with Reac
 - **Simple Internal Module**: Logical module describing a specific function of the application.
 - **Complex Internal Module**: Logical module with multiple bricks, representing sub-functions.
 - **Simple and Complex External Module**: Similar to internal modules but external to the application. They can be:
-  - Generic services consumed by multiple projects.
-  - Services specific to a project.
-  - Other internal modules exposed to other projects with particular rules.
+  - Generic services consumed by multiple application documents.
+  - Services specific to a application document.
+  - Other internal modules exposed to other application documents with particular rules.
 - **Internal and External Bricks**: Components included in complex modules.
 - **User**: Represents an end-user or user group.
 - **Cluster of Network Zones**: Internal or external clusters to apply principles to multiple network zones (less commonly used).
@@ -58,18 +58,18 @@ Define conventions to automatically generate object IDs during drawing and for i
 
 #### d. Workflow Parameters for Review Cycle
 
-Uncia incorporates a review process to ensure that project versions are approved by designated reviewers.
+Uncia incorporates a review process to ensure that application document versions are approved by designated reviewers.
 
 - **Review Process Steps**:
-  1. **Draft**: Creation phase by the Project Owner and Editors.
-  2. **In Review**: Reviewers assess, comment, and approve or reject the version. Project Owners or Editors can modify the document based on feedback.
+  1. **Draft**: Creation phase by the Application document Owner and Editors.
+  2. **In Review**: Reviewers assess, comment, and approve or reject the version. Application document Owners or Editors can modify the document based on feedback.
   3. **Approved**: Validated by all reviewers or forced by the Organization Owner if rejected by any reviewer; editing is locked.
-  4. **Design to Build**: The project version's content becomes available via API. Deployment Team members receive instructions to deploy. Uncia detects deployed resources in the subscription (currently limited to Azure).
-  5. **Design to Build Alignment**: Uncia checks that infrastructure assets and attributes are correctly deployed in Azure. Discrepancies generate a conformity report. Project Owners or Editors can accept changes or instruct the Deployment Team to adjust.
+  4. **Design to Build**: The application document version's content becomes available via API. Deployment Team members receive instructions to deploy. Uncia detects deployed resources in the subscription (currently limited to Azure).
+  5. **Design to Build Alignment**: Uncia checks that infrastructure assets and attributes are correctly deployed in Azure. Discrepancies generate a conformity report. Application document Owners or Editors can accept changes or instruct the Deployment Team to adjust.
   6. **Deployed**: The design and subscription content are perfectly aligned; editing is locked.
 
 - **Modifiable Workflow Parameters**:
-  - **Number of Rounds**: A round includes the reviewer's feedback and subsequent modifications by the Project Owner or Editor. Reviewers can approve or reject after all rounds or sooner.
+  - **Number of Rounds**: A round includes the reviewer's feedback and subsequent modifications by the Application document Owner or Editor. Reviewers can approve or reject after all rounds or sooner.
   - **Round Duration**: Time allocated for reviewers and editors to complete a round.
   - **Automatic Validation**: Option to automatically validate if all reviewers approve.
   - **Notification Frequency**: How often notifications are sent to reviewers and editors.
@@ -84,7 +84,7 @@ Define scales (e.g., 1 to 4) for:
 - **Availability**
 - **Traceability**
 
-These parameters influence project properties during creation or editing.
+These parameters influence application document properties during creation or editing.
 
 ### 4. Notification Center
 
@@ -116,7 +116,7 @@ Define products representing technologies used by the infrastructure.
   - **Versions**: Add and manage versions, setting end-of-support and end-of-life dates.
 - **Product Usage**:
   - Products serve as specific types for infrastructure asset attributes.
-  - Versions can be marked as allowed, recommended, or forbidden, influencing project configurations.
+  - Versions can be marked as allowed, recommended, or forbidden, influencing application document configurations.
   - Define compatibility rules between products and versions.
 
 ### 7. Information System Mapping (ISMapping)
@@ -130,14 +130,14 @@ Provides several functionalities:
 
 #### b. Infrastructure Asset Listing
 
-- Lists all infrastructure assets from approved project versions.
-- Helps correlate assets with projects, modules, products, and lifecycle information.
+- Lists all infrastructure assets from approved application document versions.
+- Helps correlate assets with application documents, modules, products, and lifecycle information.
 
 #### c. Intermediate Objects
 
 - **Definition**: Network or security objects between a source and destination (e.g., module to user).
-- **Purpose**: Capture flow requirements per project.
-- **Usage**: Can be used in project versions.
+- **Purpose**: Capture flow requirements per application document.
+- **Usage**: Can be used in application document versions.
 
 #### d. External Services Management
 
@@ -146,22 +146,22 @@ Provides several functionalities:
 
 #### e. Global IS Mapping View
 
-- Represents all interconnections and dependencies across projects and services.
+- Represents all interconnections and dependencies across application documents and services.
 
 ### 8. Document Synthesis Template
 
 Create a document skeleton with sections and subsections, defining expected content using various data representations (tables, bullet points, images, checklists).
 
-- **Inheritance**: All projects inherit from this template.
-- **Versioning**: Changes to the template do not affect existing project versions; only new versions inherit updates.
+- **Inheritance**: All application documents inherit from this template.
+- **Versioning**: Changes to the template do not affect existing application document versions; only new versions inherit updates.
 - **Required Sections**: Sections can be marked as required, blocking submission for review until completed.
-- **Limitations**: No mechanism prevents sections from being removed when a project version inherits from the latest template.
+- **Limitations**: No mechanism prevents sections from being removed when a application document version inherits from the latest template.
 
 ---
 
-## Definition of a Project
+## Definition of a Application document
 
-A project in Uncia is defined by:
+A application document in Uncia is defined by:
 
 ### Basic Information
 
@@ -175,9 +175,9 @@ A project in Uncia is defined by:
 - **Template Inheritance or Import**: Option to inherit from a template or import from a flow matrix.
 - **User Permissions**
 
-### Project Versions
+### Application document Versions
 
-- **Multiple Versions**: A project can have several versions.
+- **Multiple Versions**: A application document can have several versions.
 - **Version Creation**: To create a new version (minor, intermediate, major), the previous one must be approved or deployed.
 - **Reviewers and Deployment Team**: Selected at submission for review for the first version and at creation for subsequent ones.
 
@@ -185,7 +185,7 @@ A project in Uncia is defined by:
 
 ## Drawing and Editing
 
-When a project version is opened, the first view is the diagram panel, based on React Flow. Users can drag and drop objects onto the drawing area.
+When a application document version is opened, the first view is the diagram panel, based on React Flow. Users can drag and drop objects onto the drawing area.
 
 ### Objects
 
@@ -199,7 +199,7 @@ When a project version is opened, the first view is the diagram panel, based on 
 - **As an External Service**: Simply name the module.
 - **Link to a Generic Module**:
   - Define directly in the module configuration panel.
-  - Select from a list of generic modules defined in other projects or the ISMapping section.
+  - Select from a list of generic modules defined in other application documents or the ISMapping section.
 - **Best Practice**: Place modules inside network zones for clarity and adherence to IT architecture standards.
 
 ### Flows and Intermediate Objects
@@ -245,7 +245,7 @@ When a project version is opened, the first view is the diagram panel, based on 
   - References are editable if no naming convention is defined.
 - **Reusability**:
   - Existing infrastructure assets from approved or deployed versions can be reused.
-  - Assets can be reused within different modules or bricks in the same project version.
+  - Assets can be reused within different modules or bricks in the same application document version.
 
 ### Infrastructure Asset Views
 
@@ -265,20 +265,20 @@ When a project version is opened, the first view is the diagram panel, based on 
 
 ### Submission for Review
 
-- **Initiation**: Project Owners and Editors submit a project version for review.
+- **Initiation**: Application document Owners and Editors submit a application document version for review.
 - **Notifications**: Reviewers receive notifications in Uncia and via email.
 - **Process**: Reviewers assess, comment, and can approve or reject the version.
 
 ### Deployment Process
 
 - **Post-Approval**: If deployment is required (currently Azure only), upon approval:
-  - Deployment Team members receive notifications to access the project version's API endpoint.
+  - Deployment Team members receive notifications to access the application document version's API endpoint.
   - First-time recipients get an authentication token via email.
 - **Deployment**: The team deploys according to the provided JSON output.
 
 ### Linking to Azure Subscription
 
-- **Popup Prompt**: Appears to link the project version with an Azure subscription.
+- **Popup Prompt**: Appears to link the application document version with an Azure subscription.
 - **Requirements**:
   - **Tenant ID**
   - **Service Principal Credentials**
@@ -287,9 +287,9 @@ When a project version is opened, the first view is the diagram panel, based on 
 
 ### Cloud Conformity Report
 
-- **Access**: Project Owners/Editors can consult the report after the specified interval.
+- **Access**: Application document Owners/Editors can consult the report after the specified interval.
 - **Sections**:
-  - **Build Alignment**: Shows discrepancies between the project and Azure resources.
+  - **Build Alignment**: Shows discrepancies between the application document and Azure resources.
   - **Logs**: Records ongoing changes and issues.
 - **Alignment Process**:
   - **Discrepancies**: Must be resolved for the version to be considered deployed.
@@ -310,4 +310,4 @@ When a project version is opened, the first view is the diagram panel, based on 
 
 **Definition of a Template**
 
-Templates in Uncia are akin to projects and follow similar principles, including versioning up to the approved status (the last three review steps are excluded). To be utilized in a project, a template must be manually approved by a Reviewer or the Organization Owner. There are no content restrictions on templates.
+Templates in Uncia are akin to application documents and follow similar principles, including versioning up to the approved status (the last three review steps are excluded). To be utilized in a application document, a template must be manually approved by a Reviewer or the Organization Owner. There are no content restrictions on templates.
