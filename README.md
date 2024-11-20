@@ -18,10 +18,10 @@ Before producing documents, Uncia must be configured by the **Organization Owner
 
 - **Organization Owners**: Admins with full permissions over the organization's Uncia environment.
 - **Users**: By default, have read-only access to all application documents.
-  - **Application document Owner**: A user who creates a application document; has full permissions on that application document, including deletion rights.
-  - **Editor**: A user granted edit privileges on a application document by the Application document Owner.
+  - **Application document Owner**: A user who creates an application document; has full permissions on that application document, including deletion rights.
+  - **Editor**: A user granted edit privileges on an application document by the Application document Owner.
   - **Reviewer**: A user assigned to review specific application document versions; application documents can contain multiple versions.
-- **Deployment Team**: Users who do not have direct access to the application but receive email notifications to build the content of a application document version. They have token access to the API.
+- **Deployment Team**: Users who do not have direct access to the application but receive email notifications to build the content of an application document version. They have token access to the API.
 
 ### 2. Connecting to Azure Tenant
 
@@ -45,7 +45,7 @@ Parameters necessary for drawing the architecture (using drag-and-drop with Reac
 - **Complex Internal Module**: Logical module with multiple bricks, representing sub-functions.
 - **Simple and Complex External Module**: Similar to internal modules but external to the application. They can be:
   - Generic services consumed by multiple application documents.
-  - Services specific to a application document.
+  - Services specific to an application document.
   - Other internal modules exposed to other application documents with particular rules.
 - **Internal and External Bricks**: Components included in complex modules.
 - **User**: Represents an end-user or user group.
@@ -155,11 +155,11 @@ Create a document skeleton with sections and subsections, defining expected cont
 - **Inheritance**: All application documents inherit from this template.
 - **Versioning**: Changes to the template do not affect existing application document versions; only new versions inherit updates.
 - **Required Sections**: Sections can be marked as required, blocking submission for review until completed.
-- **Limitations**: No mechanism prevents sections from being removed when a application document version inherits from the latest template.
+- **Limitations**: No mechanism prevents sections from being removed when an application document version inherits from the latest template.
 
 ---
 
-## Definition of a Application document
+## Definition of an application document
 
 A application document in Uncia is defined by:
 
@@ -177,7 +177,7 @@ A application document in Uncia is defined by:
 
 ### Application document Versions
 
-- **Multiple Versions**: A application document can have several versions.
+- **Multiple Versions**: an application document can have several versions.
 - **Version Creation**: To create a new version (minor, intermediate, major), the previous one must be approved or deployed.
 - **Reviewers and Deployment Team**: Selected at submission for review for the first version and at creation for subsequent ones.
 
@@ -185,7 +185,7 @@ A application document in Uncia is defined by:
 
 ## Drawing and Editing
 
-When a application document version is opened, the first view is the diagram panel, based on React Flow. Users can drag and drop objects onto the drawing area.
+When an application document version is opened, the first view is the diagram panel, based on React Flow. Users can drag and drop objects onto the drawing area.
 
 ### Objects
 
@@ -265,7 +265,7 @@ When a application document version is opened, the first view is the diagram pan
 
 ### Submission for Review
 
-- **Initiation**: Application document Owners and Editors submit a application document version for review.
+- **Initiation**: Application document Owners and Editors submit an application document version for review.
 - **Notifications**: Reviewers receive notifications in Uncia and via email.
 - **Process**: Reviewers assess, comment, and can approve or reject the version.
 
@@ -310,4 +310,4 @@ When a application document version is opened, the first view is the diagram pan
 
 **Definition of a Template**
 
-Templates in Uncia are akin to application documents and follow similar principles, including versioning up to the approved status (the last three review steps are excluded). To be utilized in a application document, a template must be manually approved by a Reviewer or the Organization Owner. There are no content restrictions on templates.
+Templates in Uncia are akin to application documents and follow similar principles, including versioning up to the approved status (the last three review steps are excluded). To be utilized in an application document, a template must be manually approved by a Reviewer or the Organization Owner. There are no content restrictions on templates.
